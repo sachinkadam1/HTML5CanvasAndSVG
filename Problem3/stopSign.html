@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SVG Sample - Paths</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="html5.css">
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+        @import url(http://fonts.googleapis.com/css?family=Martel:700,400);
+        html body {
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 26px;
+                font-family: Lato, sans-serif;
+                color: #595959
+        }                
+    </style>
+</head>
+
+<body>
+    <h1>Problem 3</h1>
+    <svg width="500" height="300">
+        <!-- Group of red polygon and text -->
+        <defs>
+            <g id="stopSign">
+                <Polygon points="50,0 100,0 135.35,35.35 135.35,85.35 100,120.7 50,120.7 14.65,85.35 14.65,35.35"
+                    fill="#FF0000" stroke="#c1c1c1" stroke-width="4">
+                </Polygon>
+                <text x=40 y=70 font-family="san-serif" font-size="30px" fill="#FFFFFF">
+                    STOP
+                </text>
+            </g>
+        </defs>
+
+        <use xlink:href="#stopSign" transform="translate(0,10)"></use>
+        <use xlink:href="#stopSign" transform="translate(150, 10) rotate(90, 75, 60.35)" ></use>
+        <use xlink:href="#stopSign" transform="translate(300, 10) rotate(180, 75, 60.35)"></use>
+        <use xlink:href="#stopSign" transform="translate(150, 160)">
+                <animateTransform attributeName="transform" begin="0s" dur="1s" type="rotate" from="0 75 60.35" to="360 75 60.35" repeatCount="indefinite" additive="sum">
+                </animateTransform> 
+        </use>
+    </svg>
+</body>
+
+</html>
